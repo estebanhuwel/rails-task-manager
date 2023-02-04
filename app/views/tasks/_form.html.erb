@@ -1,12 +1,12 @@
-<%= form_with model: task do |f| %>
+<%= form_with model: @task do |f| %>
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
     <%= f.label :details %>
-    <%= f.text_field :details %>
+    <%= f.text_area :details, class: 'form-control' %>
   </div>
 
   <% unless f.object.new_record? %>
@@ -16,6 +16,5 @@
       </label>
     </div>
   <% end %>
-
-  <%= f.submit :"Create Task"%>
+  <%= f.submit class: 'btn btn-primary mt-3' %>
 <% end %>
